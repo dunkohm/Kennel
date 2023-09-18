@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'montserrat';
+}
+body{
+	background: linear-gradient(90deg, #fffdd0 0%, #fffdd0 30%, brown 30%, brown 100%);
+}
+.contactUs{
+	position: relative;
+	width: 100%;
+	padding: 40px 100px;
+}
+.contactUs .title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+}
+.contactUs .title h2{
+	color:#fffdd0;
+	font-weight: 500;
+}
+.form{
+	grid-area: form;
+}
+.info{
+	grid-area: info;
+}
+.map{
+	grid-area: map;
+}
+.contact{
+	padding: 40px;
+	background: #bab86c;
+	box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+}
+.box{
+	position: relative;
+	display: grid;
+	grid-template-columns: 2 1;
+	grid-template-rows: 5 4;
+	grid-template-areas: 
+		"form info"
+		"form map";
+	grid-gap: 20px;
+	margin-top: 20px;
+}
+.contact h3{
+	color: brown;
+	font-weight: 500;
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+/*form*/
+.formBox{
+	position: relative;
+	width: 100%;
+}
+.formBox .row01{
+	display: flex;
+	gap: 20px;
+}
+.inputBox{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	width: 50%;
+}
+.formBox .row01 .inputBox{
+	width: 100%;
+}
+.inputBox span{
+	color: brown;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+.inputBox input{
+	padding: 10px;
+	font-size: 1.1em;
+	outline: none;
+	border: 1px solid #904A4B;
+}
+.inputBox textarea{
+	padding: 10px;
+	font-size: 1.1em;
+	outline: none;
+	border: 1px solid #904A4B;
+	resize: none;
+	min-height: 220px;
+	margin-bottom: 10px;
+}
+.inputBox input[type="submit"]{
+	background: #fffdd0;
+	color: brown;
+	border: none;
+	font-size: 1.1em;
+	max-width: 120px;
+	font-weight: 500;
+	cursor: pointer;
+	padding: 14px 15px;
+}
+.info{
+	background: #fffdd0;
+}
+.info h3{
+	color: brown;
+}
+.info .infoBox div{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.info .infoBox div span{
+	min-width: 40px;
+	height: 40px;
+	color: brown;
+	background: #fffdd0;
+	display: flex;
+	justify-content: center;
+	font-size: 1.5em;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+.info .infoBox div p{
+	color: brown;
+	font-size: 1.1em;
+}
+.info .infoBox div a{
+	color: brown;
+	text-decoration: none;
+	font-size: 1.1em;
+}
+.sci{
+	margin-top: 40px;
+	display: flex;
+}
+.sci li{
+	list-style: none;
+	margin-right: 15px;
+}
+.sci li a{
+	color: brown;
+	font-size: 2em;
+	background: #fffdd0;
+}
+.sci li a:hover{
+	color: #bab86c;
+}
+.map{
+	padding: 0;
+}
+.map iframe{
+	width: 100%;
+	height: 100%;
+}
+/*responsive design*/
+@media(max-width: 991px){
+	body{
+		background:#bab86c; 
+	}
+	.contactUs{
+		padding: 20px;
+	}
+	.box {
+		grid-template-columns: 1;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"form"
+			"info"
+			"map";
+		grid-gap: 20px;
+		margin-top: 20px;
+	}
+	.formBox .row01 {
+		display: flex;
+		gap: 0px;
+		flex-direction: column;
+	}
+	.inputBox {
+    	width: 100%;
+	}
+	.contact {
+    	padding: 30px;
+	}
+	.map {
+   	 	min-height: 300px;
+		padding: 0px;
+	}
+	nav ul{
+		display: none;
+	}
+}
