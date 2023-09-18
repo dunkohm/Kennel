@@ -1,10 +1,16 @@
-let mysidebar=document.getElementById("mysidebar");
-let closeBtn=document.getElementById("closeBtn");
-let main=document.getElementById("main");
+window.onscroll = function() { scrollFunction() };
 
-main.addEventListener("click",()=>{
-    mysidebar.style.width="250px";
-})
-closeBtn.addEventListener("click",()=>{
-    mysidebar.style.width="0px";
-})
+function scrollFunction() {
+    const scrollToTopButton = document.getElementById("scrollToTopButton");
+    
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+}
+
+document.getElementById("scrollToTopButton").addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
