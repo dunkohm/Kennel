@@ -1,0 +1,111 @@
+/* CSS Document */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	scroll-behavior: smooth;
+}
+:root{
+	--text-color: #fffdd0;
+	--main-color: #5c4033;
+}
+section{
+	padding: 70px 17% 60px;
+}
+.center-txt{
+	text-align: center;
+}
+.center-txt h10{
+	font-size: 1.6em;
+	font-weight: 800;
+}
+.service-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+	align-items: center;
+	gap: 3rem;
+	margin-top: 5rem;
+}
+.bx{
+	position: relative;
+}
+.bx img{
+	width: 100%;
+	height: 80vh;
+	object-fit: cover;
+	border-radius: 10px;
+	filter: brightness(70%);
+	transition: all .3s cubic-bezier(.499,.05,.55,.95);
+	will-change: filter;
+	display: block;
+}
+.bx h11{
+	position: absolute;
+	left: 25px;
+	bottom: 95px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #fffdd0;
+}
+.bx h12{
+	position: absolute;
+	left: 25px;
+	bottom: 65px;
+	font-size: 20px;
+	font-weight: 700;
+	color: #fffdd0;
+}
+.bx img:hover{
+	filter: brightness(90%) hue-rotate(50deg);
+	transform: scale(1.04);
+	cursor: pointer;
+}
+.center-btn{
+	text-align: center;
+	margin-top: 4rem;
+}
+.service2-content{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	text-align: center;
+	gap: 3rem;
+	margin-top: 4rem;
+}
+.row-img{
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.row-img img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	transition: transform 0.7s;
+}
+.row-img img:hover{
+	transform: scale(1.2);
+}
+.service2-content h13{
+	color: #fffdd0;
+	font-size: 17px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all .50s ease;
+}
+.service2-content h13:hover{
+	color: #bab86c;
+}
+
+
+
+
+
