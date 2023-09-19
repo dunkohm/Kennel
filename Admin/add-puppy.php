@@ -1,6 +1,40 @@
 
 <?php
+include("../Includes/connect.php");
+if(isset($_POST['insert_puppy'])){
+    $puppy_title=$_POST['puppy_title'];
+    $puppy_description=$_POST['puppy_description'];
+    $puppy_breed=$_POST['puppy_breed'];
+    $puppy_price=$_POST['puppy_price'];
+    
+    // accessing Images
+    $puppy_image1=$_FILES['puppy_image1']['name'];
+    $puppy_image2=$_FILES['puppy_image2']['name'];
+    $puppy_image3=$_FILES['puppy_image3']['name'];
+    // accessing tmp name
+    $tmp_image1=$_FILES['puppy_image1']['tmp_name'];
+    $tmp_image2=$_FILES['puppy_image2']['tmp_name'];
+    $tmp_image3=$_FILES['puppy_image3']['tmp_name'];
+    // Condition to check for empty fields
+    if($puppy_title=='' or $puppy_description==''or $puppy_breed=='' or $puppy_image1=='' or $puppy_image2=='' or $puppy_image3=='' or $puppy_price==''){
 
+        echo "<script>alert('Please Fill all the available fields')</script>";
+        exit();
+     }
+        move_uploaded_file($tmp_image1,"./puppy-images/$puppy_image1");
+        move_uploaded_file($tmp_image2,"./puppy-images/$puppy_image2");
+        move_uploaded_file($tmp_image3,"./puppy-images/$puppy_image3");
+
+        // insert query
+        $insert_product_query="insert into `puppies` (puppy_title,puppy_description,puppy_location,owner_name,ownwer_contact,breed_title,puppy_image1,puppy_image2,puppy_image3,puppy_price,date) values('$puppy_title','$puppy_description',
+        '$puppy_keywords','$puppy_category','$puppy_brand','$puppy_image1','$puppy_image2','$puppy_image3','$puppy_price',NOW())";
+        $result_query=mysqli_query($con,$insert_puppy_query);
+        if($result_query){
+            echo "<script>alert('puppy Succesfully added!')</script>";
+        }
+
+     }
+ 
 
 ?>
 <!doctype html>
@@ -32,14 +66,8 @@
         <!-- puppy description -->
         <div class="form-outline mb-4 w-50 m-auto">
             <label for="puppy_description"class="form-label ">Puppy Description</label>
-            <input type="text" name="Puppy_description" id="Puppy_description" class="form-control"
+            <input type="text" name="puppy_description" id="puppy_description" class="form-control"
              placeholder="Enter Puppy Description" autocomplete="off" required="required">
-        </div>
-        <!-- Puppy keyword -->
-        <div class="form-outline mb-4 w-50 m-auto">
-            <label for="Puppy_keywords"class="form-label ">Puppy keyword</label>
-            <input type="text" name="Puppy_keywords" id="Puppy_keywords" class="form-control"
-             placeholder="Enter Puppy keywords" autocomplete="off" required="required">
         </div>
          <!-- puppy Location -->
          <div class="form-outline mb-4 w-50 m-auto">
@@ -47,22 +75,32 @@
             <input type="text" name="puppy_location" id="puppy_location" class="form-control"
              placeholder="Enter puppy location" autocomplete="off" required="required">
         </div>
-        <!-- Brands -->
+         <!-- puppy Owner name -->
+         <div class="form-outline mb-4 w-50 m-auto">
+            <label for="puppy_owner"class="form-label ">Puppy Owner name</label>
+            <input type="text" name="puppy_owner" id="puppy_owner" class="form-control"
+             placeholder="Enter puppy owner's name" autocomplete="off" required="required">
+        </div>
+        <!-- puppy Owner contact -->
         <div class="form-outline mb-4 w-50 m-auto">
-            <select name="Puppy_breed" id="" class="form-select">
+            <label for="puppy_owner_contact"class="form-label ">Puppy Owner name</label>
+            <input type="text" name="puppy_owner_contact" id="puppy_owner_contact" class="form-control"
+             placeholder="Enter puppy owner's Contact" autocomplete="off" required="required">
+        </div>
+        <!-- Breeds -->
+        <div class="form-outline mb-4 w-50 m-auto">
+            <select name="puppy_breed" id="" class="form-select">
                 <option value="">Select a Breed</option>
-                
                 <?php 
-                // queries
-                // $select_query="select * from `brands`";
-                // $result_query=mysqli_query($con,$select_query);
-                // // while loop
-                // while($row=mysqli_fetch_assoc($result_query)){
-                //     $brand_title=$row['brand_title'];
-                //     $brand_id=$row['brand_id'];
-
-                //     echo "<option value='$brand_id'>$brand_title</option>";
-                // } -->
+                //queries
+                $select_query="select * from `breeds`";
+                $result_query=mysqli_query($con,$select_query);
+                // while loop
+                while($row=mysqli_fetch_assoc($result_query)){
+                    $breed_title=$row['breed_title'];
+                    $breed_id=$row['breed_id'];
+                    echo "<option value='$breed_title'>$breed_title</option>";
+                }
                 
                 ?>
             </select> 
