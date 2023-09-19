@@ -164,6 +164,18 @@ nav ul li a:hover {
 
 .explore-button:hover {
     background-color: #FFA500; /* Change color on hover */
+	transform: scale(1.2) translateY(10px);
+	transition: .4s;
+}
+.btn-warning:hover{
+	background-color: #FFA500; /* Change color on hover */
+	transform: scale(1.2) translateY(10px);
+	transition: .4s;
+}
+.explore-button2:hover {
+    background-color: #FFA500; /* Change color on hover */
+	transform: scale(1.2) translateY(10px);
+	transition: .4s;
 }
 .card{
 	margin-right: 5px;
@@ -273,6 +285,10 @@ nav ul li a:hover {
 .footer{
     background-color: #8B4513;
     overflow-x: hidden;
+}
+.nav-item a:hover{
+	color: #FFA500;
+	transform: translateX(-12px);
 }
 .quick-link-header{
     font-family: 'Playfair Display', serif ;
