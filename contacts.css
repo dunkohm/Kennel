@@ -7,7 +7,7 @@
 	font-family: 'montserrat';
 }
 body{
-	background: linear-gradient(90deg, #fffdd0 0%, #fffdd0 30%, brown 30%, brown 100%);
+	background: linear-gradient(90deg, #fffdd0 0%, #fffdd0 30%, #8B4513 30%, #8B4513 100%);
 }
 .contactUs{
 	position: relative;
