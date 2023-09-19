@@ -20,10 +20,10 @@
                  </div>
         </div>
         <!-- Menu buttons -->
-        <div class="row">
+        <div class="row mt-5">
             <div class="menu-links text-center mt-2">
             <a href="index.php?insert-breed" class="">Add Breed</a>
-            <a href="#" class="">Insert Puppies</a>
+            <a href="index.php?insert-puppy" class="">Insert Puppies</a>
             <a href="#" class="">View Puppies</a>
             <a href="#" class="">Insert Blog</a>
             <a href="#" class="">View Blog</a>
@@ -32,14 +32,16 @@
             <a href="#" class="">Log Out</a>
             </div>
         </div>
-        <div class="row">
-            <!-- User instruction Goes here -->
-            <h2 class="text-center my-5">User instructions Go here!</h2>
+        <div class="row mt-5">
             <?php 
    //  getter function insert breeds
     if(isset($_GET['insert-breed'])){
       include('add-breed.php');
   }
+//   getter function insert puppy
+    if(isset($_GET['insert-puppy'])){
+        include('add-puppy.php');
+   }
     ?>
         </div>
     </div>
