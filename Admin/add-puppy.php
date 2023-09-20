@@ -5,6 +5,10 @@ if(isset($_POST['insert_puppy'])){
     $puppy_title=$_POST['puppy_title'];
     $puppy_description=$_POST['puppy_description'];
     $puppy_breed=$_POST['puppy_breed'];
+    $puppy_location=$_POST['puppy_location'];
+    $Owner_name=$_POST['puppy_owner'];
+    $Ownwer_contact=$_POST['puppy_owner_contact'];
+    $breed_title=$_POST['puppy_breed'];
     $puppy_price=$_POST['puppy_price'];
     
     // accessing Images
@@ -26,8 +30,8 @@ if(isset($_POST['insert_puppy'])){
         move_uploaded_file($tmp_image3,"./puppy-images/$puppy_image3");
 
         // insert query
-        $insert_product_query="insert into `puppies` (puppy_title,puppy_description,puppy_location,owner_name,ownwer_contact,breed_title,puppy_image1,puppy_image2,puppy_image3,puppy_price,date) values('$puppy_title','$puppy_description',
-        '$puppy_keywords','$puppy_category','$puppy_brand','$puppy_image1','$puppy_image2','$puppy_image3','$puppy_price',NOW())";
+        $insert_puppy_query="insert into `puppies` (puppy_title,puppy_desc,puppy_location,Owner_name,Owner_contact,breed_title,P_image_one,P_image_two,P_image_three,puppy_price,date) values('$puppy_title','$puppy_description',
+        '$puppy_location','$Owner_name','$Ownwer_contact','$breed_title','$puppy_image1','$puppy_image2','$puppy_image3','$puppy_price',NOW())";
         $result_query=mysqli_query($con,$insert_puppy_query);
         if($result_query){
             echo "<script>alert('puppy Succesfully added!')</script>";
