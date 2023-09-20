@@ -64,7 +64,7 @@ section{
 	transform: scale(1.04);
 	cursor: pointer;
 }
-.center-btn{
+.explore-button{
 	text-align: center;
 	margin-top: 4rem;
 }
