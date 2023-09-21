@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <title>The Kennel -Admin</title>
   </head>
   <body class="bg-light">
@@ -16,16 +17,18 @@
             <!-- admin header -->
                 <div class="admin-header text-center d-flex">
 			      <img src="../Images/logo.png" alt="The Kennel">
-                  <h3 class="salutation">Welcome back Admin!</h3>
+                  <h3 class="salutation">Welcome back <span class="text-warning" >Duncan</span>!</h3>
                  </div>
         </div>
         <!-- Menu buttons -->
         <div class="row mt-5">
             <div class="menu-links text-center mt-2">
             <a href="index.php?insert-breed" class="">Add Breed</a>
+            <a href="index.php?add-topic" class="">Add Topic</a>
+            <a href="index.php?view-topics" class="">View Topic</a>
             <a href="index.php?insert-puppy" class="">Insert Puppies</a>
-            <a href="#" class="">View Puppies</a>
-            <a href="#" class="">Insert Blog</a>
+            <a href="index.php?view-puppies" class="">View Puppies</a>
+            <a href="index.php?add-post" class="">Insert Blog</a>
             <a href="#" class="">View Blog</a>
             <a href="#" class="">Add Users</a>
             <a href="#" class="">View Users</a>
@@ -42,6 +45,22 @@
     if(isset($_GET['insert-puppy'])){
         include('add-puppy.php');
    }
+   //   getter function insert post
+   if(isset($_GET['add-post'])){
+    include('add-post.php');
+}
+ //   getter function insert topic
+ if(isset($_GET['add-topic'])){
+  include('add-topic.php');
+}
+ //   getter function view topics
+ if(isset($_GET['view-topics'])){
+  include('view-topics.php');
+}
+ //   getter function view puppies
+ if(isset($_GET['view-puppies'])){
+  include('view-puppies.php');
+}
     ?>
         </div>
     </div>
