@@ -11,6 +11,7 @@ include("../Includes/connect.php");
             <tr>
                 <th>#</th>
                 <th>Topic Name</th>
+                <th colspan="2">Operations</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,10 @@ include("../Includes/connect.php");
                 <tr>
                 <td><?=$row['topic_id'];?></td>
                 <td><?=$row['topic_title']; ?></td>
+                <td>
+                <a href="#" class="text-warning mx-2"><i class="bi bi-pencil-square"></i></a>
+									<a href="#" class="text-warning"><i class="bi bi-trash3-fill"></i></a>
+                </td>
             </tr>
             <?php
                  }

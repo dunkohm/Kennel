@@ -1,5 +1,15 @@
 <?php  
 include("../Includes/connect.php");
+if (isset($_COOKIE['session_id'])) {
+    // Get the user's username from the session.
+    $username = $_SESSION['username'];
+
+    // Continue with the rest of your code.
+} else {
+    // The user is not logged in, so redirect them to the login page.
+    header('Location: login.php');
+    exit;
+}
 if(isset($_POST['insert-breed'])){
     $br_title = $_POST['breed-title'];
     // code to avoid repetition of breeds

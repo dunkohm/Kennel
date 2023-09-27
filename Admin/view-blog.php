@@ -2,7 +2,7 @@
 include("../Includes/connect.php");
 ?>
 <div class="text-center">
-  <h2 class="page-header">Puppies listed</h2>
+  <h2 class="page-header">Blogs listed</h2>
 </div>
 <div class="container-fluid">
     <div class="row justify-content-center mt-3 mx-3">
@@ -10,22 +10,20 @@ include("../Includes/connect.php");
         <thead class="text-light w-100">
             <tr>
                 <th>#</th>
-                <th>Puppy Name</th>
-                <th>Location</th>
-                <th>Owner</th>
-                <th>Contact</th>
-                <th>Breed</th>
+                <th>Title</th>
+                <th>Topic</th>
+                <th>Body</th>
                 <th>Image</th>
-                <th>Price</th>
-                <th>Date Added</th>
+                <th>Created at</th>
                 <th colspan="2">Operations</th>
+              
             </tr>
         </thead>
         <tbody>
     <?php
             
               //  select query
-            $select_query="select * from `puppies` ";
+            $select_query="select * from `blog_posts` ";
             $result_query=mysqli_query($con,$select_query);
              // success check
            if(mysqli_num_rows($result_query) > 0){
@@ -33,19 +31,20 @@ include("../Includes/connect.php");
               foreach($result_query as $row){
                 ?>
                 <tr>
-                <td><?=$row['puppy_id'];?></td>
-                <td><?=$row['puppy_title']; ?></td>
-                <td><?=$row['puppy_location']; ?></td>
-                <td><?=$row['Owner_name']; ?></td>
-                <td><?=$row['Owner_contact']; ?></td>
-                <td><?=$row['breed_title']; ?></td>
-                <td class="align-top"><img src="../Admin/puppy-images/<?php echo $puppy_image1 ; ?>" style="height: 50px;"></td>
-                <td><?=$row['puppy_price']; ?></td>
-                <td><?=$row['date']; ?></td>
+                <td><?=$row['blog_id'];?></td>
+                <td><?=$row['title']; ?></td>
+                <td><?=$row['topic']; ?></td>
+                <td><?=$row['body']; ?></td>
+                <td><img src="../Admin/puppy-images/<?php echo $puppy_image1 ; ?>" style="height: 50px;"></td>
+                <td><?=$row['created_at']; ?></td>
                 <td>
-                <a href="#" class="text-warning mx-2"><i class="bi bi-pencil-square"></i></a>
-									<a href="#" class="text-warning"><i class="bi bi-trash3-fill"></i></a>
+                <a href="#" class="text-warning mx-2 fs-4"><i class="bi bi-pencil-square"></i></a>
+				<a href="#" class="text-warning mx-2 fs-4"><i class="bi bi-trash3-fill"></i></a>
+                <a href="#" class="text-warning mx-2 fs-4"><i class="bi bi-file-earmark-arrow-up-fill"></i></a>
+                <a href="#" class="text-warning fs-4"><i class="bi bi-file-earmark-arrow-down-fill"></i></a>
+               
                 </td>
+                
             </tr>
             <?php
                  }
