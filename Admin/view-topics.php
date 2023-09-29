@@ -1,5 +1,12 @@
 <?php 
 include("../Includes/connect.php");
+// Check if the user is logged in.
+if (!is_logged_in()) {
+  // The user is not logged in, so redirect them to the login page.
+  header('Location: index.php');
+  exit;
+}
+
 ?>
 <div class="text-center">
   <h2 class="page-header">Topics listed</h2>

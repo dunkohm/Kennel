@@ -50,6 +50,16 @@ $row_count=mysqli_num_rows($result);
     height: 200px;
     width: 200px;
 }
+.btn-login{
+    padding: 10px;
+    background-color: #FFA500;
+    font-size: 19px;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    transition: .3s;
+    font-family: 'Playfair Display', serif;
+}
   </style>
   <body>
   <div class="container-fluid m-0 p-0">
@@ -68,7 +78,7 @@ $row_count=mysqli_num_rows($result);
                 <!-- Password field -->
                 <div class="form-outline mb-3">
                     <label for="Password" class="form-label text-light">Password</label>
-                    <input type="password" id="Password" class="form-control" placeholder="Enter your new Password" autocomplete="off" required="required" name="user_password" />
+                    <input type="password" id="Password" class="form-control" placeholder="Enter your Password" autocomplete="off" required="required" name="user_password" />
                 </div>
                 <!-- Login button -->
                 <div class="mt-4 pt-2 text-center">

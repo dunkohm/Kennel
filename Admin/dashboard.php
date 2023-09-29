@@ -1,15 +1,10 @@
 <?php
 session_start();
 include('../Includes/connect.php');
-
-
+include('main functions/functions.php');
 // Check for the cookie on every page load. If the cookie exists, the user is logged in.
-if (isset($_COOKIE['session_id'])) {
-  // Get the user's username from the session.
-  $username = $_SESSION['username'];
-
-  // Continue with the rest of your code.
-} else {
+// Check if the user is logged in.
+if (!is_logged_in()) {
   // The user is not logged in, so redirect them to the login page.
   header('Location: index.php');
   exit;
@@ -31,6 +26,39 @@ if (isset($_COOKIE['session_id'])) {
     <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <title>The Kennel -Admin</title>
+    <style>
+      .btn-logout{
+    text-decoration: none;
+    font-size: 22px;
+    font-family: 'Playfair Display', serif;
+    color:#8B4513;
+}
+.stats{
+    background-color: #FFA500;
+    font-family: 'Playfair Display', serif;
+    font-size: 24x;
+    margin: 0;
+
+}
+.stats p{
+    color: #8B4513;
+    
+}
+.puppy-imagep{
+  width:70px;
+  object-fit:contain;
+}
+.puppy-imagep1{
+  width:70px;
+  object-fit:contain;
+}
+.nav{
+  margin:0;
+}
+.navbar{
+  margin:0;
+}
+    </style>
   </head>
   <body class="bg-light">
     <div class="container-fluid">
@@ -46,21 +74,33 @@ if (isset($_COOKIE['session_id'])) {
             }
             ?>
                  </div>
+                 <div class="nav navbar p-2 stats ">
+                  <p class="mt-2">Breeds Available: 25</p>
+                  <p class="mt-2">Total Listed : 803</p>
+                  <p class="mt-2">Total Blogs Published: 45</p>
+                  <p class="mt-2">Total Users : 2</p>
+                  <p class="mt-2">Topics: 12</p>
+                 <a href="dashboard.php?logout" class="btn-logout">Log Out</a>
+                 </div>
+                 
         </div>
         <!-- Menu buttons -->
-        <div class="row mt-5">
-            <div class="menu-links text-center mt-2">
-            <a href="dashboard.php?insert-breed" class="">Add Breed</a>
-            <a href="dashboard.php?add-topic" class="">Add Topic</a>
-            <a href="dashboard.php?view-topics" class="">View Topic</a>
-            <a href="dashboard.php?insert-puppy" class="">Insert Puppies</a>
-            <a href="dashboard.php?view-puppies" class="">View Puppies</a>
-            <a href="dashboard.php?add-post" class="">Insert Blog</a>
-            <a href="dashboard.php?view-blog" class="">View Blog</a>
-            <a href="dashboard.php?add-user" class="">Add Users</a>
-            <a href="#" class="">View Users</a>
-            <a href="dashboard.php?logout" class="">Log Out</a>
-            </div>
+        <div class="row mt-2">
+            
+            <div class="nav navbar menu-links p-2">
+  <a href="dashboard.php?insert-breed" class="">Add Breed</a>
+  <a href="dashboard.php?view-breed" class="">View Breed</a>
+  <a href="dashboard.php?add-topic" class="">Add Topic</a>
+  <a href="dashboard.php?view-topics" class="">View Topic</a>
+  <a href="dashboard.php?insert-puppy" class="">Insert Puppies</a>
+  <a href="dashboard.php?view-puppies" class="">View Puppies</a>
+  <a href="dashboard.php?add-post" class="">Insert Blog</a>
+  <a href="dashboard.php?view-blog" class="">View Blog</a>
+  <a href="dashboard.php?add-user" class="">Add Users</a>
+  <a href="#" class="">View Users</a>
+  
+                
+        </div>
         </div>
         <div class="row mt-5">
             <?php 
@@ -96,10 +136,16 @@ if (isset($_COOKIE['session_id'])) {
 if(isset($_GET['add-user'])){
   include('add-user.php');
 }
+if(isset($_GET['edit-puppy'])){
+  include('edit-puppy.php');
+}
+if(isset($_GET['edit-blog'])){
+  include('edit-blog.php');
+}
 if(isset($_GET['logout'])){
   echo"<script>alert('Are you sure you want to log out?')</script>";
   session_cache_expire();
-  session_abort();
+  session_destroy();
   header('Location: index.php');
 }
     ?>

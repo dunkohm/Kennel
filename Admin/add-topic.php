@@ -1,5 +1,12 @@
 <?php  
 include("../Includes/connect.php");
+// Check if the user is logged in.
+if (!is_logged_in()) {
+    // The user is not logged in, so redirect them to the login page.
+    header('Location: index.php');
+    exit;
+  }
+  
 if(isset($_POST['add-topic'])){
     $tp_title = $_POST['topic-title'];
     // code to avoid repetition of breeds

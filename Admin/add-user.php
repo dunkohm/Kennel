@@ -1,5 +1,12 @@
 <?php  
 include("../Includes/connect.php");
+// Check if the user is logged in.
+if (!is_logged_in()) {
+    // The user is not logged in, so redirect them to the login page.
+    header('Location: index.php');
+    exit;
+  }
+  
 if(isset($_POST['add-user'])){
     $name=$_POST['user-name'];
     $email=$_POST['user-email'];
