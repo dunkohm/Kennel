@@ -8,9 +8,9 @@
 }
 :root{
 	--container-color:#8B4513;
-	--second-color:#4682B4;
+	--second-color:#FFA500;
 	--text-color:#333333;
-	--bg-color:#FFD700;
+	--bg-color: #fffdd0;
 }
 ::selection{
 	color: var(--bg-color);
@@ -52,13 +52,11 @@ header.shadow{
 	justify-content: space-between;
 	padding: 18px 0; 
 }
-.logo{
-	font-size: 1.5rem;
-	font-weight: 600;
-	color: var(--text-color);
-}
-.logo span{
-	color: var(--second-color);
+.logo img {
+    height: 100px;
+    width: 150px;
+    padding-left: 30px;
+    
 }
 .homepage{
 	padding: 8px 14px;
