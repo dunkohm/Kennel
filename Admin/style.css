@@ -23,6 +23,20 @@
     color: #fff;
     float: right;
 }
+.stats{
+    background-color: #FFA500;
+    font-family: 'Playfair Display', serif;
+}
+.stats p{
+    color: #8B4513;
+    font-size: 22x;
+}
+.btn-logout{
+    text-decoration: none;
+    float: right;
+    font-size: 17x;
+    font-family: 'Playfair Display', serif;
+}
 .menu-links{
     margin-top: 20px;
 }
@@ -30,13 +44,28 @@
     background-color: #8B4513;
     text-decoration: none;
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    padding: 10px ;
+    font-size: 17px;
+    padding: 10px 7px ;
     color: #fff;
     border: 3px solid #FFA500;
     border-radius: 15px;
+    display: flex;
      
 }
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .links-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  
 .btn-insert{
     padding: 10px;
     background-color: #8B4513;
@@ -88,9 +117,14 @@
     border: none;
     border-radius: 30px;
     transition: .3s;
+    font-family: 'Playfair Display', serif;
 }
 .btn-login:hover{
     background-color: #4682B4;
     color: #fff;
     border: 1px solid #fff;
+}
+.display-img{
+    width: 150px;
+    height: 150px;
 }

@@ -1,6 +1,13 @@
-<?php  
+<?php  -
 include("../Includes/connect.php");
-if(isset($_POST['insert-breed'])){
+
+
+if (!is_logged_in()) {
+    // The user is not logged in, so redirect them to the login page.
+    header('Location: index.php');
+    exit;
+  }
+if(isset($_POST['insertbreed'])){
     $br_title = $_POST['breed-title'];
     // code to avoid repetition of breeds
     $select_query ="select * from `breeds` where breed_title= '$br_title'";

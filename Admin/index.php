@@ -1,3 +1,30 @@
+<?php
+session_start();
+include("../Includes/connect.php");
+// session_start();
+if(isset($_POST['user_login'])){
+// Get the username and password from the login form.
+$username = $_POST['user_username'];
+$password=$_POST['user_password'];
+// Prepare the SQL query to select the user from the database.
+$sql = "select * from users where username = '$username'";
+$result =mysqli_query($con,$sql);
+$row_data=mysqli_fetch_assoc($result);
+$row_count=mysqli_num_rows($result);
+// If the user exists in the database, set the session variables and redirect to the administrator's dashboard.
+    if ($row_data && password_verify($password, $row_data['password'])) {
+        echo "<script>alert('Login successful!')</script>";
+        $_SESSION['username'] = $username;
+         // Set a cookie on the user's browser that contains a unique identifier for their session.
+         setcookie('session_id', uniqid(), time() + 60 * 60 * 24, '/');
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        // The user does not exist in the database, or the password is incorrect, so echo a login failed message.
+        echo "<script>alert('Login failed.Invalid Credentials!Please try again.')</script>";
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,44 +34,60 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>The Kennel -Login</title>
     <link rel="stylesheet" href="style.css">
-    <title>The Kennel -Admin</title>
   </head>
-  <body class="bg-light">
-    <div class="container-fluid">
-        <div class="row ">
-            <!-- admin header -->
-                <div class="admin-header text-center d-flex">
-			      <img src="../Images/logo.png" alt="The Kennel">
-                  <h3 class="salutation">Welcome back Admin!</h3>
-                 </div>
-        </div>
-        <!-- Menu buttons -->
-        <div class="row mt-5">
-            <div class="menu-links text-center mt-2">
-            <a href="index.php?insert-breed" class="">Add Breed</a>
-            <a href="index.php?insert-puppy" class="">Insert Puppies</a>
-            <a href="#" class="">View Puppies</a>
-            <a href="#" class="">Insert Blog</a>
-            <a href="#" class="">View Blog</a>
-            <a href="#" class="">Add Users</a>
-            <a href="#" class="">View Users</a>
-            <a href="#" class="">Log Out</a>
+  <style>
+    body{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        background-color:#8B4513;
+        overflow: hidden;
+    }
+    .logo img{
+    height: 200px;
+    width: 200px;
+}
+.btn-login{
+    padding: 10px;
+    background-color: #FFA500;
+    font-size: 19px;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    transition: .3s;
+    font-family: 'Playfair Display', serif;
+}
+  </style>
+  <body>
+  <div class="container-fluid m-0 p-0">
+    <div class="text-center logo" >
+    <img src="../Images/logo.png" class="p-2"alt="The Kennel">
+    <h2 class="page-header">Admin Login</h2>
+    </div>
+        <div class="row d-flex align-items-center justify-content-center m-2">
+            <div class="col-md-10 col-xl-4 mt-2 p-2">
+                <form action="" method="post" >
+                    <!-- username field -->
+                <div class="form-outline mb-3">
+                    <label for="username" class="form-label text-light">Username</label>
+                    <input type="text" id="username" class="form-control" placeholder="Enter your username" required="required" autocomplete="off" name="user_username" />
+                </div>
+                <!-- Password field -->
+                <div class="form-outline mb-3">
+                    <label for="Password" class="form-label text-light">Password</label>
+                    <input type="password" id="Password" class="form-control" placeholder="Enter your Password" autocomplete="off" required="required" name="user_password" />
+                </div>
+                <!-- Login button -->
+                <div class="mt-4 pt-2 text-center">
+                    <input type="submit" value="Login" class="btn-login px-4 py-2" name="user_login"></div>
+                </form>
             </div>
         </div>
-        <div class="row mt-5">
-            <?php 
-   //  getter function insert breeds
-    if(isset($_GET['insert-breed'])){
-      include('add-breed.php');
-  }
-//   getter function insert puppy
-    if(isset($_GET['insert-puppy'])){
-        include('add-puppy.php');
-   }
-    ?>
-        </div>
     </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

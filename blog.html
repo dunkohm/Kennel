@@ -28,7 +28,7 @@
 	</style>
 </head>
 
-<body>
+<body class="bg-light">
 	<header>
 		<div class="logo">
 			<img src="Images/logo.png" alt="The Kennel">
@@ -44,6 +44,25 @@
 			</ul>
 		</nav>
 	</header>
+	<!-- Search -->
+	<div class="row text-center m-3 justify-content-center bg-light ">
+		<div class="col-8 col-xl-3">
+		  <div class="input-group">
+			<input type="search" class="form-control" placeholder="Search">
+			<button type="button" class="btn btn-outline-secondary">
+				<i class="bi bi-search"></i>
+			</button>
+		  </div>
+		</div>
+		<div class="col-4 col-xl-3">
+		  <select class="form-select" aria-label="Filter by">
+			<option value="most-recent">Most recent</option>
+			<option value="top-stories">Top stories</option>
+			<option value="training">Training</option>
+		  </select>
+		</div>
+	  </div>
+	  
 	<!-- featured section -->
 	<section class="featured-breeds p-2 bg-light">
 		<div class="container-fluid">
@@ -59,7 +78,8 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h5 class="card-title">"Choosing the Perfect Puppy: A Step-by-Step Guide"</h5>
+                              <h3 class="card-title">"Choosing the Perfect Puppy: A Step-by-Step Guide"</h3>
+							  <p class="card-text"><small class="text-muted">Grooming</small></p>
                               <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi, nesciunt numquam 
                                 quae necessitatibus at libero repellat rem ipsa. Corrupti repellat necessitatibus ipsam incidunt omnis 
                                 blanditiis illo nesciunt dicta labore sequi vel doloribus reprehenderit repellendus vero iusto magni error 
@@ -249,9 +269,6 @@
 			</div>
 
 		</div>
-
-		
-
 	</section>
 	<div class="footer">
 		<div class="row">

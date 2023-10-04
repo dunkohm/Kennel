@@ -1,6 +1,13 @@
 
 <?php
 include("../Includes/connect.php");
+// Check if the user is logged in.
+if (!is_logged_in()) {
+    // The user is not logged in, so redirect them to the login page.
+    header('Location: index.php');
+    exit;
+  }
+  
 if(isset($_POST['insert_puppy'])){
     $puppy_title=$_POST['puppy_title'];
     $puppy_description=$_POST['puppy_description'];
@@ -71,7 +78,7 @@ if(isset($_POST['insert_puppy'])){
         <div class="form-outline mb-4 w-50 m-auto">
             <label for="puppy_description"class="form-label ">Puppy Description</label>
             <input type="text" name="puppy_description" id="puppy_description" class="form-control"
-             placeholder="Enter Puppy Description" autocomplete="off" required="required">
+             placeholder="Enter Gender,Age, Color,Location,Characters" autocomplete="off" required="required">
         </div>
          <!-- puppy Location -->
          <div class="form-outline mb-4 w-50 m-auto">
