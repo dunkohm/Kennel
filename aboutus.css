@@ -44,6 +44,24 @@ section{
 .home .content p{
 	margin-bottom: 65px;
 }
+.home .media-icons{
+	z-index: 888;
+	position: absolute;
+	right: 30px;
+	display: flex;
+	flex-direction: column;
+	transition: 0.3s ease;
+}
+.home .media-icons a{
+	color: #fffdd0;
+	font-size: 1.6em;
+}
+.home .media-icons a:not(:last-child){
+	margin-bottom: 20px;
+}
+.home .media-icons a:hover{
+	transform: scale(1.3);
+}
 .home video{
 	z-index: 000;
 	position: absolute;
@@ -91,5 +109,13 @@ section{
 	transition-property: clip-path;
 }
 @media (max-width: 1040px){
-	
+	header{
+		padding: 100px 20px;
+	}
+	section{
+		padding: 100px 20px;
+	}
+	.home .media-icons{
+		right: 15px;
+	}
 }
