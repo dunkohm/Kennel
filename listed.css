@@ -1,0 +1,44 @@
+.search-bar {
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #FFA500;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Suggestions container styles */
+#suggestions {
+    width: 70%;
+    margin: 5px auto;
+}
+
+/* Suggestion item styles */
+.suggestion {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
