@@ -1,4 +1,6 @@
 /* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 *{
 	padding: 0;
 	margin: 0;
@@ -20,8 +22,9 @@ section{
 	text-align: center;
 }
 .center-txt h10{
-	font-size: 1.6em;
-	font-weight: 800;
+	font-family: 'Lobster Two', cursive;
+    font-size: 3.0rem;
+    color: #4682B4;
 }
 .service-content{
 	display: grid;
@@ -64,18 +67,19 @@ section{
 	transform: scale(1.04);
 	cursor: pointer;
 }
-.explore-button{
-	text-align: center;
-	margin-top: 4rem;
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FFD700; /* Use the primary color accent */
+    color: #333; /* Text color is dark for contrast */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjust font size as needed */
+    border-radius: 50px;
+	font-family: 'Playfair Display', serif;
+    transition: background-color 0.3s;
 }
-.service2-content{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-	align-items: center;
-	text-align: center;
-	gap: 3rem;
-	margin-top: 4rem;
-}
+
 .row-img{
 	overflow: hidden;
 	width: 100px;
@@ -94,16 +98,7 @@ section{
 .row-img img:hover{
 	transform: scale(1.2);
 }
-.service2-content h13{
-	color: #fffdd0;
-	font-size: 17px;
-	font-weight: 500;
-	cursor: pointer;
-	transition: all .50s ease;
-}
-.service2-content h13:hover{
-	color: #bab86c;
-}
+
 
 
 
