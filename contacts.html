@@ -6,6 +6,7 @@
 <title>Contact Us</title>
 <link rel="stylesheet" href="contacts.css">
 <link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -23,6 +24,16 @@
 				<li><a href="contacts.html">Contact Us</a></li>
 			</ul>
 		</nav>
+		 <!-- Search icon -->
+		 <div class="search-icon" onclick="toggleSearch()">
+			<i class="fa fa-search" style="color: #fff;"></i>
+		</div>
+		<!-- Search bar -->
+		<div class="search-bar">
+			<input type="text" id="searchInput" placeholder="Search..." oninput="showSuggestions(this.value)">
+		</div>
+		<!-- Suggestions container -->
+	<div id="suggestions"></div>
 	</header>
 	<div class="contactUs">
 		<div class="title">
@@ -32,39 +43,39 @@
 			<!--form-->
 			<div class= "contact form">
 				<h3>Send Us a Message</h3>
-				<form>
+				<form method="post">
 					<div class="formBox">
 						<div class="row01">
 							<div class="inputBox">
 								<span>First Name</span>
-								<input type="text" placeholder="Harry">
+								<input type="text" id="firstname" placeholder="Harry">
 							</div>
 							<div class="inputBox">
 								<span>Last Name</span>
-								<input type="text" placeholder="Kane">
+								<input type="text" id="secondname" placeholder="Kane">
 							</div>
 						</div>
 						
 						<div class="row01">
 							<div class="inputBox">
 								<span>Email</span>
-								<input type="text" placeholder="harry@email.com">
+								<input type="text" id="email" placeholder="harry@email.com">
 							</div>
 							<div class="inputBox">
 								<span>Mobile</span>
-								<input type="text" placeholder="+254-712345678">
+								<input type="text" id="mobile" placeholder="+254-712345678">
 							</div>
 						</div>
 						
 						<div class="row02">
 							<div class="inputBox">
 								<span>Message</span>
-								<textarea placeholder="Write your Message Here..."></textarea>
+								<textarea id="message" placeholder="Write your Message Here..."></textarea>
 							</div>
 						</div>
 						<div class="row02">
 							<div class="inputBox">
-								<input type="submit" value="Send">
+								<input type="submit" value="Submit">
 							</div>
 						</div>
 					</div>
@@ -104,5 +115,6 @@
 	
 	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>

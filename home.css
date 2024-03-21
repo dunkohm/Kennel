@@ -111,6 +111,65 @@ nav ul li a:hover {
     color: #FFD700; /* Change the color on hover */
 }
 
+/* Hide the search bar initially */
+/* Search bar styles */
+.search-bar {
+    display: none; /* Initially hide the search bar */
+    position: relative; /* Ensure proper positioning */
+    margin-top: 10px; /* Add some top margin */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: calc(100% - 100px); /* Adjust input width */
+    border: none;
+    border-bottom: 2px solid #ccc; /* Add bottom border */
+    font-size: 16px;
+    outline: none; /* Remove default input focus outline */
+}
+
+.search-bar button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    background-color: #FFA500;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners only on the right side */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Suggestions container styles */
+#suggestions {
+    position: absolute;
+    top: 100%; /* Position below the search bar */
+    left: 0;
+    width: calc(100% - 2px); /* Adjust width to match the search bar */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none; /* Hide top border */
+    border-radius: 0 0 5px 5px; /* Rounded corners only on the bottom */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+    z-index: 999; /* Ensure it's above other elements */
+    display: none; /* Initially hide suggestions */
+}
+
+/* Suggestion item styles */
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}
 /* Media query for responsive design */
 @media (max-width: 768px) {
     nav ul {
@@ -167,6 +226,7 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     filter: blur(3px); /* Apply a blur effect to the video */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
 }
 
 /* Add an overlay with a brownish color */
@@ -180,6 +240,7 @@ nav ul li a:hover {
     background-color: rgba(139, 69, 19, 0.6); /* Use a brownish color with opacity */
     z-index: 1; /* Place the overlay above the video */
 }
+
 
 .hero-content {
     position: relative; /* Make sure content is above the overlay */
