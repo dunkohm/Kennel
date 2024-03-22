@@ -24,7 +24,7 @@ Text Color - Dark Gray:#333333
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #8B4513; /* Background color */
+    background-color: rgba(139, 69, 19, 0.9); /* Background color */
     z-index: 9999; /* Ensure the preloader appears above other content */
   }
   
