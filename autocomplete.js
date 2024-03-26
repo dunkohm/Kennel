@@ -27,7 +27,7 @@ function updateSuggestions() {
     var searchTerm = document.getElementById("searchInput").value.trim();
 
     // Get the suggestions container
-    var suggestionsContainer = document.getElementById("suggestions");
+    var suggestionsContainer = document.getElementById("suggestion");
 
     // Clear previous suggestions
     suggestionsContainer.innerHTML = "";

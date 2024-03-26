@@ -1,11 +1,11 @@
-.search-bar {
+.searchbar {
     display: block;
     margin: 20px auto;
     width: 60%;
     text-align: center;
 }
 
-.search-bar input[type="text"] {
+.searchbar input[type="text"] {
     padding: 10px;
     width: 70%;
     border: 1px solid #ccc;
@@ -13,7 +13,7 @@
     font-size: 16px;
 }
 
-.search-bar button {
+.searchbar button {
     padding: 10px 20px;
     background-color: #FFA500;
     border: none;
@@ -24,12 +24,12 @@
     transition: background-color 0.3s ease;
 }
 
-.search-bar button:hover {
+.searchbar button:hover {
     background-color: #0056b3;
 }
 
 /* Suggestions container styles */
-#suggestions {
+#suggestion {
     position: absolute;
     width: 70%;
     margin-top: 5px;
@@ -40,6 +40,7 @@
     z-index: 999; /* Ensure it's above other elements */
     background-color: rgba(255, 255, 255, 0.9); /* Adjust opacity here */
     border: 1px solid #ccc; /* Optional: Add border */
+	display: block;
 }
 
 /* Suggestion item styles */
