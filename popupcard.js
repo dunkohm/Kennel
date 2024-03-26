@@ -1,15 +1,22 @@
-let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
+// Query all next and previous buttons
+let nextButtons = document.querySelectorAll('.next');
+let prevButtons = document.querySelectorAll('.prev');
 
-next.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.sld').appendChild(items[0])
-})
+// Loop through all next buttons
+nextButtons.forEach(nextButton => {
+    nextButton.addEventListener('click', function(){
+        let items = this.closest('.popup-container').querySelectorAll('.item');
+        this.closest('.popup-container').querySelector('.sld').appendChild(items[0]);
+    });
+});
 
-prev.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.sld').prepend(items[items.length - 1])
-})
+// Loop through all previous buttons
+prevButtons.forEach(prevButton => {
+    prevButton.addEventListener('click', function(){
+        let items = this.closest('.popup-container').querySelectorAll('.item');
+        this.closest('.popup-container').querySelector('.sld').prepend(items[items.length - 1]);
+    });
+});
 
 // Get all elements with class "popupBtn"
 const popupButtons = document.querySelectorAll('.popupBtn');
