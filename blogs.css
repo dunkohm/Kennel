@@ -52,6 +52,14 @@ header.shadow{
 	justify-content: space-between;
 	padding: 18px 0; 
 }
+nav a {
+    color: #fff; /* Default color */
+    transition: color 0.4s; /* Smooth transition */
+}
+
+nav a.scrolled {
+    color: #8B4513; /* Color when scrolled */
+}
 .logo img {
     height: 100px;
     width: 150px;
@@ -162,13 +170,13 @@ header.shadow{
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
-.footer{
+.footers{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px 0;
 }
-.footer p{
+.footers p{
 	font-size: 0.938rem;
 }
 .social{

@@ -17,7 +17,11 @@ $(document).ready(function(){
 });
 //header background change on scroll
 let header = document.querySelector("header");
+let navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", () =>{
-	header.classList.toggle("shadow", window.scrollY > 0);
-})
+window.addEventListener("scroll", () => {
+    header.classList.toggle("shadow", window.scrollY > 0);
+    navLinks.forEach(link => {
+        link.classList.toggle("scrolled", window.scrollY > 0);
+    });
+});
