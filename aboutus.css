@@ -127,6 +127,67 @@ body{
 	background-color: #505050;
 	color: #dbdbdb;
 }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 5px; /* Rounded corners for lines */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Rotate lines for 'X' appearance when menu is open */
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+@media screen and (max-width: 768px) {
+    /* Show hamburger menu and hide nav-links */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Rotate lines for 'X' appearance when menu is open */
+    .hamburger.open .line:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.open .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open .line:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
 /*.home{
 	position: relative;
 	width: 100%;

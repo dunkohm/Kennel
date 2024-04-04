@@ -85,3 +85,33 @@ document.addEventListener("DOMContentLoaded", function() {
       content.style.display = "block";
     }, 3000); // 3000 milliseconds = 3 seconds
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const postContainer = document.querySelector('.pst');
+    const arrow = document.createElement('i');
+    arrow.classList.add('fas', 'fa-chevron-right', 'arrow');
+    postContainer.appendChild(arrow);
+  
+    const postBoxes = document.querySelectorAll('.pst-box');
+    let currentIndex = 0;
+  
+    function togglePostBoxes() {
+      for (let i = 0; i < postBoxes.length; i++) {
+        if (i >= currentIndex && i < currentIndex + 3) {
+          postBoxes[i].style.display = 'block';
+        } else {
+          postBoxes[i].style.display = 'none';
+        }
+      }
+    }
+  
+    togglePostBoxes();
+  
+    arrow.addEventListener('click', function() {
+      currentIndex += 3;
+      if (currentIndex >= postBoxes.length) {
+        currentIndex = 0; // Reset index to show first set of post boxes
+      }
+      togglePostBoxes();
+    });
+  });
