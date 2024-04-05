@@ -464,7 +464,7 @@ nav .nav-links li a:hover {
   }
   
   .arrow:hover {
-    background-color: rgba(139,69,19, 1);
+    background-color: #FFA500;
     transform: translateY(-50%) scale(1.1);
   }
   

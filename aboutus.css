@@ -11,18 +11,19 @@ body{
 	overflow: hidden;
 }
 .container{
+	margin-top: 20px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 1000px;
-	height: 600px;
+	width: 1100px;
+	height: 700px;
 	background: #8B4513;
 	box-shadow: 0 30px 50px #dbdbdb;
 }
 .container .slide .item{
-	width: 200px;
-	height: 300px;
+	width: 300px;
+	height: 400px;
 	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
@@ -71,13 +72,14 @@ body{
 	display: block;
 }
 .cnt .nm{
-	font-size: 40px;
+	font-size: 60px;
 	text-transform: uppercase;
 	font-weight: bold;
 	opacity: 0;
 	animation: animate 1s ease-in-out 1 forwards;
 }
 .cnt .des{
+	font-size: 20px;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	opacity: 0;
