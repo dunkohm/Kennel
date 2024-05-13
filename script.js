@@ -115,3 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
       togglePostBoxes();
     });
   });
+
+  document.getElementById('check').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});

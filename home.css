@@ -170,38 +170,29 @@ nav .nav-links li a:hover {
 .suggestion:hover {
     background-color: #f0f0f0;
 }
-/* Media query for responsive design */
-@media (max-width: 768px) {
-    nav ul {
+/* Media query for screens smaller than 768px */
+@media only screen and (max-width: 868px) {
+    label #btn{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #333;
+        top: 80px;
+        left: 0;
         text-align: center;
-        padding-top: 10px;
-        display: none;
     }
-
-    nav ul.active {
+    nav ul li{
         display: block;
+        margin: 50px 0;
+        line-height: 30px;
     }
-
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
+    nav ul li a{
+        font-size: 20px;
     }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo img {
-        margin-bottom: 10px;
-    }
-
-    /* Add a menu icon for small screens */
-    .menu-icon {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-    }
+    
 }
 /* Style the hero section */
 .hero {
@@ -508,3 +499,26 @@ nav .nav-links li a:hover {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+label #butn,
+label #cancel{
+    color: white;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+/*.check-btn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}*/
+
