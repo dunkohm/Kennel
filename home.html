@@ -55,18 +55,25 @@
 			<img src="Images/logo.png" alt="The Kennel">
 		</div>
 		<nav>
-			<input type="checkbox" id="check">
-			<label for="check" class="check-btn">
-				<i class="fas fa-bars" id="butn"></i>
-				<i class="fas fa-times" id="cancel"></i>
-			</label>
-			<ul class="nav-links">
+			<ul class="sidebar">
+				<li onclick=hideSidebar()><a href="#"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#E8EAED"/></svg></a></li>
 				<li><a href="home.html">Home</a></li>
 				<li><a href="aboutus.html">About Us</a></li>
 				<li><a href="listed.html">Featured Puppies</a></li>
 				<li><a href="services.html">Services</a></li>
 				<li><a href="blogs.html">Blogs</a></li>
 				<li><a href="contacts.html">Contact Us</a></li>
+			</ul>
+			<ul>
+				<li class="hideOnMobile"><a href="home.html">Home</a></li>
+				<li class="hideOnMobile"><a href="aboutus.html">About Us</a></li>
+				<li class="hideOnMobile"><a href="listed.html">Featured Puppies</a></li>
+				<li class="hideOnMobile"><a href="services.html">Services</a></li>
+				<li class="hideOnMobile"><a href="blogs.html">Blogs</a></li>
+				<li class="hideOnMobile"><a href="contacts.html">Contact Us</a></li>
+				<li class="menu-button" onclick=showSidebar()><a href="#"><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 12V10H18V12H0ZM0 7V5H18V7H0ZM0 2V0H18V2H0Z" fill="#E8EAED"/></svg></a></li>
 			</ul>
 		</nav>
 		 <!-- Search icon -->
